@@ -10,7 +10,7 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 export const getTrending = async () => {
     const trendingMovies = axios.get(`${BASE_URL}/trending/all/day?api_key=${API_KEY}&language=en-US`);
     return await trendingMovies;
-}
+}   
 
 // search for movies (/movies)
 // https://api.themoviedb.org/3/search/movie

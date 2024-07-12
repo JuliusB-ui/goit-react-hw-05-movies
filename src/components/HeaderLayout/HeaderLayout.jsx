@@ -10,8 +10,7 @@ export const HeaderLayout = () => {
             </nav>
         </header>
       {/* Outlet should be used in parent route elements to render their child route elements*/}
-      <Outlet />
-      
+      <Outlet/>
       </>
   )
 }
