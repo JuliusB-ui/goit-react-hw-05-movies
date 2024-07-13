@@ -1,13 +1,24 @@
 import MovieList from 'components/MovieList/MovieList'
-import React from 'react'
+import { getTrending } from 'api/fetchAPI';
+import React, { useEffect } from 'react'
 
 const Homepage = () => {
+
+  useEffect(()=>{
+    const fetchData = async() => {
+      const data= await getTrending();
+      console.log(data);
+    }
+    fetchData();
+  },[])
+
+
   return (
-    <div>Homepage
+    <main>
+      <h1>Trending Movies Today</h1>
       <MovieList/>
-      </div>
-    
+    </main>
   )
 }
 
-export default Homepage
+export default Homepage 

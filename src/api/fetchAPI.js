@@ -1,4 +1,5 @@
 import axios from "axios";
+import MoviesPage from "pages/MoviesPage/MoviesPage";
 
 const API_KEY = '3ea9e05bf615fb8d96f57aa463f7f68d';
 const BASE_URL = 'https://api.themoviedb.org/3';
@@ -7,13 +8,17 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 // get Trending list (/)
 // https://api.themoviedb.org/3/trending/all/day
 
-export const getTrending = async () => {
-    const trendingMovies = axios.get(`${BASE_URL}/trending/all/day?api_key=${API_KEY}&language=en-US`);
-    return await trendingMovies;
+export const getTrending = async() => {
+    const response = await axios.get(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}`);
+    return response.data.results;
 }   
 
 // search for movies (/movies)
 // https://api.themoviedb.org/3/search/movie
+export const searchMovieByKeyword = async(query) => {
+    const response = await axios.get(`${BASE_URL}/search/movie?api_key=${API_KEY}&${query}`);
+    return response.data;
+}   
 
 // get movie details (/movies/:movieID)
 // https://api.themoviedb.org/3/movie/${movie_id}
