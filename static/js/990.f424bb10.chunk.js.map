@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/990.f424bb10.chunk.js","mappings":"iKAQA,UANc,WACZ,OACEA,EAAAA,EAAAA,KAAA,OAAAC,SAAK,SAET,C","sources":["components/Casts/Casts.jsx"],"sourcesContent":["import React from 'react'\n\nconst Casts = () => {\n  return (\n    <div>Casts</div>\n  )\n}\n\nexport default Casts"],"names":["_jsx","children"],"sourceRoot":""}
