@@ -1,7 +1,13 @@
+import MovieList from 'components/MovieList/MovieList'
 import React from 'react'
 
-export const Homepage = () => {
+const Homepage = () => {
   return (
-    <div>Homepage</div>
+    <div>Homepage
+      <MovieList/>
+      </div>
+    
   )
 }
+
+export default Homepage

@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const Casts = () => {
+const Casts = () => {
   return (
     <div>Casts</div>
   )
 }
+
+export default Casts

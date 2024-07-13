@@ -1,7 +1,12 @@
 import React from 'react'
 
-export const ErrorNotFound = () => {
+const ErrorNotFound = () => {
   return (
-    <div>ErrorNotFound</div>
+    <div>
+      <button> GO BACK</button>
+      ErrorNotFound
+      </div>
   )
 }
+
+export default ErrorNotFound
