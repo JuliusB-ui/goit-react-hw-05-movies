@@ -1,13 +1,14 @@
 import MovieList from 'components/MovieList/MovieList'
 import { getTrending } from 'api/fetchAPI';
-import React, { useEffect } from 'react'
+import React, { useState,useEffect } from 'react'
 
 const Homepage = () => {
+  const [trendingMovies, setTrendingMovies] = useState([]);
 
   useEffect(()=>{
     const fetchData = async() => {
-      const data= await getTrending();
-      console.log(data);
+      const movies= await getTrending();
+      setTrendingMovies(movies);
     }
     fetchData();
   },[])
@@ -16,7 +17,7 @@ const Homepage = () => {
   return (
     <main>
       <h1>Trending Movies Today</h1>
-      <MovieList/>
+      <MovieList movies={trendingMovies}/>
     </main>
   )
 }

@@ -10,6 +10,8 @@ const SearchForm = ({ onSubmit }) => {
   
   const handleSubmit = e => {
     e.preventDefault();
+
+    if (query==='') return;
     onSubmit(query);
     setQuery("");
   }
