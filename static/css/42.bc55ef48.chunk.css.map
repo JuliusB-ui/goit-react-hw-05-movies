@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/42.bc55ef48.chunk.css","mappings":"AAAA,gCAEI,WAAY,CADZ,WAEJ","sources":["pages/MovieDetailsPage/MovieDetailsPage.module.css"],"sourcesContent":[".poster {\n    width: 240px;\n    height: auto;\n}"],"names":[],"sourceRoot":""}
