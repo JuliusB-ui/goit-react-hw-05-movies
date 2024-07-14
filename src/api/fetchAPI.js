@@ -1,5 +1,4 @@
 import axios from "axios";
-import MoviesPage from "pages/MoviesPage/MoviesPage";
 
 const API_KEY = '3ea9e05bf615fb8d96f57aa463f7f68d';
 const BASE_URL = 'https://api.themoviedb.org/3';
@@ -28,6 +27,14 @@ export const getMovieDetails = async movieID => {
 
 // get movie credits (/movies/:movieID/cast)
 // https://api.themoviedb.org/3/movie/{movie_id}/credits
+export const getCasts = async movieID => {
+    const response= await axios.get(`${BASE_URL}/movie/${movieID}/credits?api_key=${API_KEY}`);
+    return response.data.cast;
+}
 
 // get movie reviews (/movies/:movieID/reviews)
 // https://api.themoviedb.org/3/movie/${movie_id}/reviews
+export const getReviews = async movieID => {
+    const response= await axios.get(`${BASE_URL}/movie/${movieID}/reviews?api_key=${API_KEY}`);
+    return response.data.results;
+}
