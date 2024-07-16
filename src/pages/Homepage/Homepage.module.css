@@ -1,0 +1,13 @@
+.mainPage{
+    margin: 30px ;
+}
+
+.title {
+    text-align:center;
+    padding-bottom: 20px;
+    font-weight: 800;
+    text-shadow: 0 0 2px rgb(9, 46, 148);
+    color: cyan;
+    font-size: 60px;
+    cursor: default;
+}

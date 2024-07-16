@@ -1,13 +1,16 @@
 import { Suspense } from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
+import css from './HeaderLayout.module.css';
 
 export const HeaderLayout = () => {
+
+
   return (
     <>
-      <header>
-          <nav>
-              <NavLink to="/" end>Home</NavLink>
-              <NavLink to='/movies'>Movies</NavLink>
+      <header className={css.header}>
+          <nav className={css.navList}>
+            <NavLink to="/" end className={({isActive}) => (isActive ? css.active : css.inactive)}>Home</NavLink>
+            <NavLink to='/movies' className={({isActive}) => (isActive ? css.active : css.inactive)}>Movies</NavLink>
           </nav>
       </header>
 

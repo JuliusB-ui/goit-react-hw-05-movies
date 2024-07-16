@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import css from './SearchForm.module.css';
 
 
 const SearchForm = ({ onSubmit }) => {
@@ -16,9 +17,9 @@ const SearchForm = ({ onSubmit }) => {
     setQuery("");
   }
   return (
-    <form onSubmit={handleSubmit}>
-      <input value={query} onChange={handleChange} />
-      <button type="submit">Search</button>
+    <form onSubmit={handleSubmit} className={css.form}>
+      <input value={query} onChange={handleChange} className={css.input} placeholder="Search for movie keyword" />
+      <button type="submit" className={css.button}>Search</button>
     </form>
   )
 }

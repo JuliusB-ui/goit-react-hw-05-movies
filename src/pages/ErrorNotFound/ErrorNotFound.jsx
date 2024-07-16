@@ -1,16 +1,18 @@
 import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom';
+import css from '../Homepage/Homepage.module.css';
+import style from './ErrorNotFound.module.css'
 
 const ErrorNotFound = () => {
   const location=useLocation();
   return (
-    <div>
+    <main className={css.mainPage}>
       <button>
-        <Link to={location.state?.from || '/'}>GO BACK
+        <Link to={location.state?.from || '/'}>Back
         </Link>
       </button>
-      ErrorNotFound
-      </div>
+      <h3 class={style.error}>page not found...</h3>
+      </main>
   )
 }
 

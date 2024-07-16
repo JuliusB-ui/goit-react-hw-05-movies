@@ -4,6 +4,7 @@ import { Link, useParams, Outlet } from 'react-router-dom'
 import { useLocation } from 'react-router-dom';
 import noimageplaceholder from 'components/images/image-not-found-icon.png';
 import css from './MovieDetailsPage.module.css';
+import defaultStyle from '../Homepage/Homepage.module.css';
 
 
 const MovieDetailsPage = () => {
@@ -25,11 +26,13 @@ const MovieDetailsPage = () => {
   const genres=details.genres?.map(genre => genre.name).join(', ')
 
   return (
-    <div>
-      <Link to={backLink.current}>Back</Link>
-      <img src={
+    <main className={defaultStyle.mainPage}>
+      <button><Link to={backLink.current}>Back</Link></button>
+      <div className={css.details}><img src={
         details.poster_path?
-        `https://image.tmdb.org/t/p/w500${details.poster_path}`: `${noimageplaceholder}`} className={css.poster} alt={details.title}/>
+        `https://image.tmdb.org/t/p/w500${details.poster_path}`: `${noimageplaceholder}`} width='240' height='auto' alt={details.title}/>
+      
+      <div>
       <h1>{details.title}</h1>
 
       <p>User Score: <b>{averageScore}%</b></p>
@@ -38,7 +41,8 @@ const MovieDetailsPage = () => {
       <p>{details.overview}</p>
 
       <h3>Genres</h3>
-      <p>{genres}</p>
+      <p>{genres}</p></div>
+      </div>
       <h3>Other Information</h3>
       <div>
         <Link to="casts" state={{ from: location }}>Casts</Link>
@@ -47,7 +51,7 @@ const MovieDetailsPage = () => {
         <Suspense fallback="Loading, please wait...">
       <Outlet/>
       </Suspense>
-    </div>
+    </main>
   )
 }
 

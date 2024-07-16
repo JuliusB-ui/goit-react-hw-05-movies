@@ -3,6 +3,7 @@ import SearchForm from 'components/SearchForm/SearchForm';
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { searchMovie } from 'api/fetchAPI';
+import css from '../Homepage/Homepage.module.css';
 
 
 const MoviesPage = () => {
@@ -29,8 +30,8 @@ const MoviesPage = () => {
 
 
   return (
-    <main>
-      <h1>Movies</h1>
+    <main className={css.mainPage}>
+      <h1 className={css.title}>MOVIES</h1>
       <SearchForm onSubmit={updateQueryString}/>
       {searchResults.length !== 0 && <MovieList movies={searchResults}/>}
     </main>

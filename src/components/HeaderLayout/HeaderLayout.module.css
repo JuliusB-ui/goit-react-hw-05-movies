@@ -1,0 +1,26 @@
+.header {
+    text-align: right;
+    padding: 20px 30px;
+    background: linear-gradient(90deg,#ffebeb, #a0ffff,#ffebeb);
+    font-weight: 700;
+    font-size: 25px;
+    font-family: "Comic Neue", cursive;
+}
+
+.navList {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+navlist a {
+    border: 1px solid gray;
+}
+
+.navList a.active{
+    padding: 5px 10px;
+    background-color:  rgba(132, 158, 17, 0.308);
+    border-radius: 5px;
+    color: rgb(0, 0, 0)
+}
