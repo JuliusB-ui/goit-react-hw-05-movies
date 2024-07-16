@@ -27,26 +27,34 @@ const MovieDetailsPage = () => {
 
   return (
     <main className={defaultStyle.mainPage}>
-      <button><Link to={backLink.current}>Back</Link></button>
-      <div className={css.details}><img src={
-        details.poster_path?
-        `https://image.tmdb.org/t/p/w500${details.poster_path}`: `${noimageplaceholder}`} width='240' height='auto' alt={details.title}/>
-      
-      <div>
-      <h1>{details.title}</h1>
+      <Link to={backLink.current} ><button className={css.back}>Back</button></Link>
+      <div className={css.movieDetails}>
+        <div className={css.details}>
+          <img src={
+          details.poster_path?
+          `https://image.tmdb.org/t/p/w500${details.poster_path}`: `${noimageplaceholder}`} width='240' height='auto' alt={details.title}/>
+        
+          <div>
+            <h1 className={css.title}>{details.title}</h1>
 
-      <p>User Score: <b>{averageScore}%</b></p>
+            <p className={css.paragraph}>User Score: <b>{averageScore}%</b></p>
 
-      <h3>Overview</h3>
-      <p>{details.overview}</p>
+            <h3 className={css.subtitle}>Overview</h3>
+            <p className={css.paragraph}>{details.overview}</p>
 
-      <h3>Genres</h3>
-      <p>{genres}</p></div>
-      </div>
-      <h3>Other Information</h3>
-      <div>
-        <Link to="casts" state={{ from: location }}>Casts</Link>
-        <Link to="reviews" state={{ from: location }}>Reviews</Link>
+            <h3 className={css.subtitle}>Genres</h3>
+            <p className={css.paragraph}>{genres}</p>
+          </div>
+        </div>
+        <div className={css.line}>
+        </div>
+        <div className={css.otherInf}>
+          <h3 className={css.othersub}>Other Information</h3>
+          <ul>
+            <Link to="casts" state={{ from: location }}><button className={css.otherBtn}>Casts</button></Link>
+            <Link to="reviews" state={{ from: location }}><button className={css.otherBtn}>Reviews</button></Link>
+          </ul>
+        </div>
       </div>
         <Suspense fallback="Loading, please wait...">
       <Outlet/>

@@ -7,10 +7,11 @@ const ErrorNotFound = () => {
   const location=useLocation();
   return (
     <main className={css.mainPage}>
-      <button>
-        <Link to={location.state?.from || '/'}>Back
-        </Link>
+        <Link to={location.state?.from || '/'}>
+              <button className={style.back}>
+Back
       </button>
+      </Link>
       <h3 class={style.error}>page not found...</h3>
       </main>
   )

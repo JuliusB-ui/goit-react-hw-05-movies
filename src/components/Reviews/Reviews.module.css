@@ -1,0 +1,17 @@
+.subtitle{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    margin: 20px 0 30px;
+}
+
+.author{
+    font-size: 25px;
+    margin: 20px 0;
+    text-decoration: underline;
+}
+
+.review{
+    padding: 0 15px 15px;
+    font-size: 20px;
+}

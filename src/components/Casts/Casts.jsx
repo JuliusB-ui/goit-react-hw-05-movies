@@ -25,12 +25,12 @@ const Casts = () => {
   <>
     {castList.length !==0 ?
     <div>
-      <h4>Movie Casts</h4>
-      <ul>
+      <h3 className={css.subtitle}>Movie Casts</h3>
+      <ul className={css.castList}>
         {castList.map(cast => (
           <li key={cast.cast_id}>
-            <img src={cast.profile_path?`https://image.tmdb.org/t/p/w500${cast.profile_path}`:`${noimageplaceholder}`} className={css.poster} alt={cast.name}/>
-            <h5>{cast.name} </h5>
+            <img className={css.pic} src={cast.profile_path?`https://image.tmdb.org/t/p/w500${cast.profile_path}`:`${noimageplaceholder}`} alt={cast.name}/>
+            <h4>{cast.name} </h4>
             <p>{cast.character!==''? `as ${cast.character}`: ''}</p>
           </li>
         ))}

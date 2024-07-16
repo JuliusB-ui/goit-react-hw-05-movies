@@ -4,3 +4,16 @@
     text-align: center;
     padding: 50px;
 }
+
+.back{
+    border: none;
+    padding: 10px 15px;
+    margin: 15px;
+    border-radius: 7px;
+    box-shadow: 0 0 4px black;
+    font: inherit;
+    font-weight: 600;
+    color:rgb(87, 74, 56);
+    background-color: skyblue;
+    cursor: pointer;
+}

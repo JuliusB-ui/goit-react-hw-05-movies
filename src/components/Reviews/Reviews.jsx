@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getReviews } from 'api/fetchAPI';
 import { useParams } from 'react-router-dom';
+import css from './Reviews.module.css'
 
 const Reviews = () => {
   const [reviewsList,setReviewsList]=useState([]);
@@ -22,12 +23,12 @@ const Reviews = () => {
     <>
     {reviewsList.length !== 0?
     <div> 
-      <h4>Reviews</h4>
+      <h3 className={css.subtitle}>Reviews</h3>
       <ul>
         {reviewsList.map(review => (
           <li key={review.id}>
-            <h5>{review.author}</h5>
-            <p>{review.content}</p>
+            <h4 className={css.author}>{review.author}</h4>
+            <p className={css.review}>{review.content}</p>
           </li>
         ))}
       </ul>
